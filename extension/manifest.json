@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "PTA AI Assistant",
+  "version": "1.0",
+  "description": "An AI assistant for PTA (pintia.cn).",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://pintia.cn/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ]
+}
