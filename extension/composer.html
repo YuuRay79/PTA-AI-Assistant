@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能组卷</title>
+    <link rel="stylesheet" href="composer.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="menu">
+                <button class="menu-item active">题目库管理</button>
+                <button class="menu-item">手动组卷</button>
+                <button class="menu-item">智能组卷</button>
+                <button class="menu-item">试卷管理</button>
+            </nav>
+        </aside>
+        <main class="content">
+            <div id="welcome-view">
+                <h1>欢迎使用智能组卷系统</h1>
+                <p>请从左侧选择一个功能开始。</p>
+            </div>
+
+            <div id="question-bank-view" class="view" style="display: none;">
+                <div class="toolbar">
+                    <button id="create-question-btn" class="btn">创建题目</button>
+                    <button id="delete-question-btn" class="btn btn-danger">删除选中</button>
+                </div>
+                <div id="question-list">
+                    <!-- Questions will be rendered here by JavaScript -->
+                </div>
+            </div>
+
+            <div id="manual-composition-view" class="view" style="display: none;">
+                <div id="paper-details-form-container">
+                    <h2>创建新试卷</h2>
+                    <form id="paper-details-form">
+                        <div class="form-group">
+                            <label for="paper-name">试卷名称</label>
+                            <input type="text" id="paper-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="paper-description">试卷描述</label>
+                            <textarea id="paper-description"></textarea>
+                        </div>
+                        <button type="submit" class="btn">开始组卷</button>
+                    </form>
+                </div>
+                <div id="composition-interface" style="display: none;">
+                    <div class="filters">
+                        <select id="filter-class"></select>
+                        <select id="filter-knowledge"></select>
+                        <select id="filter-difficulty"></select>
+                        <button id="reset-filters-btn" class="btn">重置筛选</button>
+                    </div>
+                    <div id="composition-question-list"></div>
+                    <button id="finish-composition-btn" class="btn">完成组卷</button>
+                </div>
+            </div>
+            
+            <div id="paper-management-view" class="view" style="display: none;">
+                <div id="paper-list-container">
+                    <h2>我的试卷</h2>
+                    <div id="paper-list"></div>
+                </div>
+                <div id="paper-display-view" style="display: none;">
+                    <button id="back-to-paper-list-btn" class="btn">返回列表</button>
+                    <h2 id="display-paper-name"></h2>
+                    <p id="display-paper-description"></p>
+                    <div id="display-paper-questions"></div>
+                </div>
+            </div>
+
+            <!-- Other views will go here -->
+        </main>
+    </div>
+
+    <!-- Create Question Modal -->
+    <div id="create-question-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>创建新题目</h2>
+            <form id="create-question-form">
+                <div class="form-group">
+                    <label for="question-stem">题目题干</label>
+                    <textarea id="question-stem" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="question-class">课堂</label>
+                    <input type="text" id="question-class" required>
+                </div>
+                <div class="form-group">
+                    <label for="question-knowledge">知识点</label>
+                    <input type="text" id="question-knowledge" required>
+                </div>
+                <div class="form-group">
+                    <label for="question-difficulty">难度</label>
+                    <select id="question-difficulty">
+                        <option>简单</option>
+                        <option>中等</option>
+                        <option>困难</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">保存</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="composer.js"></script>
+</body>
+</html>

@@ -6,11 +6,25 @@
   "permissions": [
     "storage"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["https://pintia.cn/*"],
       "css": ["styles.css"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "composer.html",
+        "composer.css",
+        "composer.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {}
 }

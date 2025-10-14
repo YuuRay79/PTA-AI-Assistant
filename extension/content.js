@@ -44,6 +44,10 @@
     smartComposeButton.textContent = '智能组卷';
     teacherButtonsWrapper.appendChild(smartComposeButton);
 
+    smartComposeButton.addEventListener('click', () => {
+        chrome.runtime.sendMessage({action: "openComposer"});
+    });
+
     // --- Create Student-specific Buttons ---
     const studentButtonsWrapper = document.createElement('div');
     buttonsContainer.appendChild(studentButtonsWrapper);
