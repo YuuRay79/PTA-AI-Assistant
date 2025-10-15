@@ -11,9 +11,15 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://pintia.cn/*"],
-      "css": ["styles.css"],
-      "js": ["content.js"]
+      "matches": [
+        "https://pintia.cn/*"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -23,7 +29,9 @@
         "composer.css",
         "composer.js"
       ],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ],
   "action": {}
