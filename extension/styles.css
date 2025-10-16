@@ -766,24 +766,27 @@
 }
 
 .var-options {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
 .var-option {
-  flex: 1;
-  padding: 8px 16px;
+  padding: 10px 16px;
   background: white;
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s;
+  text-align: left;
+  color: #333;
 }
 
 .var-option:hover {
   border-color: #FFA6C9;
   background: #FFF5F9;
+  color: #FFA6C9;
 }
 
 /* 训练计划样式 */
